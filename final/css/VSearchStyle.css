@@ -1,0 +1,276 @@
+html,
+body {
+	margin: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+.draw-b {
+	background-color: black;
+	line-height: 50px;
+}
+
+header {
+	min-width: 100%;
+	min-height: 30px;
+}
+#visualizacao {
+	margin-top: 50px;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: center;
+	position: relative;
+}
+#imageSearchBar {
+	position: absolute;
+	background-color: gray;
+	z-index: -3;
+}
+canvas {
+	border-style: solid;
+	border-width: 5px;
+	border-color: gray;
+	border-radius: 1%;
+}
+.texto {
+	margin-top: 20px;
+	text-align: center;
+	position: relative;
+}
+
+.draw-b img {
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+#in {
+	vertical-align: bottom;
+	outline: 0;
+}
+
+.d {
+	width: 80px;
+	height: 60px;
+}
+.cor {
+	widows: 30px;
+	height: 40px;
+}
+.md {
+	text-align: center;
+	margin-top: 15px;
+}
+.cl {
+	outline-width: 0;
+	outline: none;
+	width: 25px;
+	height: 20px;
+	display: inline-block;
+}
+.lb {
+	display: inline-block;
+	font-size: 19px;
+}
+
+.color {
+	display: block;
+
+	height: 100%;
+	width: 100%;
+	border: 1px solid;
+	margin: 5px;
+}
+
+#butao_pesquisa {
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+
+	margin-right: 10px;
+	margin-left: 10px;
+
+	border-radius: 1%;
+	border-color: black;
+	border-width: 3px;
+}
+
+#zoomInParent div {
+	text-align: center;
+	padding: 10px;
+	margin: 6px;
+}
+#zoomInParent img {
+	border-style: solid;
+	border-width: 5px;
+	border-color: gray;
+	border-radius: 1%;
+}
+/*CSS do Menu Dropdown*/
+
+div.dropdown-content div {
+	display: inline-block;
+	width: 100%;
+	margin: 5px;
+}
+
+/*div para posicionar */
+.dropdown {
+	position: relative;
+	float: right;
+	margin-right: 3em;
+}
+
+/*esquema da caixa do menu*/
+.btdrop {
+	background-color: #4caf50;
+	color: white;
+	padding: 12px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-size: 17px;
+	border: none;
+}
+
+/* menu escondido  */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 143px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+/* Links dentro do dropdown */
+.dropdown-content button,
+.dropdown-content a {
+	color: black;
+	padding: 2px;
+	padding-left: 6px;
+	text-decoration: none;
+	display: block;
+}
+
+/* altera a cor quando o rato esta sobre ele */
+.dropdown-content button,
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+/* mostra o dropdown quando está o rato está por cima */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+div.dropdown-content div button,
+div.dropdown-content div a {
+	margin: 0;
+	padding: 0;
+
+	width: 100%;
+	background-color: #e6e6e6;
+
+	border: none;
+	color: black;
+
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+}
+
+/* Dropdown Sub-menu*/
+.submenu {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.dropdown-submenu {
+	position: relative;
+}
+.dropdown-submenu .dropdown {
+	top: 0;
+	left: 100%;
+	margin-top: -1px;
+}
+
+.submenu .dropdown-manmade {
+	display: none;
+	padding-left: 2px;
+}
+
+.submenu:hover .dropdown-manmade {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+.btdrop-manmade {
+	background-color: #f1f1f1 !important;
+	padding-left: 6px !important;
+	display: inline;
+}
+
+/*classes para o menu drop-down das cores*/
+.color {
+	text-align: center;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.dropdown-content .color:hover {
+	background-color: #e6e6e6 !important;
+}
+
+.example_f {
+	float: right;
+	border-radius: 8px;
+	background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+	border: none;
+	color: #ffffff;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding: 10px;
+	width: 180px;
+	transition: all 0.4s;
+	cursor: pointer;
+	margin: 5px;
+}
+.example_f span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.4s;
+}
+.example_f span:after {
+	content: "\00bb";
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+.example_f:hover span {
+	padding-right: 25px;
+}
+.example_f:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+.buttom {
+	text-align: center;
+	background-color: black;
+	margin-top: 30px;
+	color: white;
+	height: 40px;
+}
+
+.txt-buttom {
+	padding-top: 12px;
+	display: inline-block;
+	vertical-align: middle;
+}

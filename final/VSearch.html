@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="PCM Final Project - Visual Search" />
+	<meta name="keywords" content="HTML5, CSS, JavaScript" />
+	<meta name="author" content="Miguel Távora, Pedro Henriques" />
+	<title>Visual Search</title>
+	<script src="js/Image_Processing.js"></script>
+	<script src="js/XML_Database.js"></script>
+	<script src="js/ISearchEngine.js"></script>
+	<script src="js/ISearchEngine_Manager.js"></script>
+
+	<!--  Script para encontrar por palavras semelhantes -->
+	<script src="//unpkg.com/string-similarity/umd/string-similarity.min.js"></script>
+	<link rel="stylesheet" href="css/VSearchStyle.css" />
+
+</head>
+
+<body>
+	<header>
+		<div class="draw-b">
+			<img class="firstImage" src="Images/icon2.png" alt="" onclick="location.reload();" />
+			<div class="dropdown">
+				<button class="btdrop">Categories</button>
+				<div class="dropdown-content">
+					<a onclick="getImagesFromCategory('beach')">Beach</a>
+					<a onclick="getImagesFromCategory('birthday')">Birthday</a>
+					<a onclick="getImagesFromCategory('face')">Face</a>
+					<a onclick="getImagesFromCategory('indoor')">Indoor</a>
+
+					<div class="submenu">
+						<button class="btdrop-manmade" style="    
+			  display: inline-block;
+			  width: auto;">
+							Manmade
+						</button>
+						<img src="Images/arrow.png" alt="oops" style=" float: right;" />
+						<div class="dropdown-manmade">
+							<a onclick="getImagesFromCategory('manmade/artificial')">Artificial</a>
+							<a onclick="getImagesFromCategory('manmade/manmade')">Manmade</a>
+							<a onclick="getImagesFromCategory('manmade/urban')">Urban</a>
+						</div>
+					</div>
+
+					<a onclick="getImagesFromCategory('marriage')">Marriage</a>
+					<a onclick="getImagesFromCategory('nature')">Nature</a>
+					<a onclick="getImagesFromCategory('no_people')">No people</a>
+					<a onclick="getImagesFromCategory('outdoor')">Outdoor</a>
+					<a onclick="getImagesFromCategory('party')">Party</a>
+					<a onclick="getImagesFromCategory('people')">People</a>
+					<a onclick="getImagesFromCategory('snow')">Snow</a>
+				</div>
+			</div>
+
+			<div class="dropdown" id="color-menu" style="display: none;">
+				<button class="btdrop">
+					Colors
+				</button>
+				<div class="dropdown-content" style="min-width:108px;">
+					<a class="color" id="vermelho" style="background-color: red;"
+						onclick="getImagesWithColorRestriction('red')">Red</a>
+					<a class="color" style="background-color: orange;"
+						onclick="getImagesWithColorRestriction('orange')">Orange</a>
+					<a class="color" style="background-color: yellow;"
+						onclick="getImagesWithColorRestriction('yellow')">Yellow</a>
+					<a class="color" style="background-color: green;"
+						onclick="getImagesWithColorRestriction('green')">Green</a>
+					<a class="color" style="background-color: cyan;"
+						onclick="getImagesWithColorRestriction('blue-green')">Cyan</a>
+					<a class="color" style="background-color: blue;"
+						onclick="getImagesWithColorRestriction('blue')">Blue</a>
+					<a class="color" style="background-color: purple;"
+						onclick="getImagesWithColorRestriction('purple')">Purple</a>
+					<a class="color" style="background-color: pink;"
+						onclick="getImagesWithColorRestriction('pink')">Pink</a>
+					<a class="color" style="background-color: white;"
+						onclick="getImagesWithColorRestriction('white')">White</a>
+					<a class="color" style="background-color: grey;"
+						onclick="getImagesWithColorRestriction('grey')">Grey</a>
+					<a class="color" style="background-color: black; color: grey;"
+						onclick="getImagesWithColorRestriction('white')">Black</a>
+					<a class="color" style="background-color: brown;"
+						onclick="getImagesWithColorRestriction('brown')">Brown</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div class="texto">
+			<input id="inputText" type="text" style="width: 500px;height: 25px;" placeholder="Search word" value=""
+				onsubmit="getImagesFromWord()" />
+			<img class="image" src="Images/search2.png" alt="Click me for Results" onclick="getImagesFromWord()" />
+		</div>
+
+	</section>
+
+	<section id="visualizacao">
+		<div id="imageSearchBar" style="display: none;">
+			<h1>Pesquisar por Imagem</h1>
+			<p>Pesquise com imagens em vez de texto</p>
+			<h3>Large aqui a sua imagem</h3>
+		</div>
+		<canvas id="canvas" width="1100" height="1100">
+			Your browser doesn't recognize the canvas element
+		</canvas>
+	</section>
+
+	<section id="zoomInParent" style="display: none; ">
+		<div>
+			<h2>Selected</h2>
+			<img id="zoomIn" src="" alt="NotSelected" />
+		</div>
+	</section>
+	<section style="text-align: center; padding-right: 10px;">
+		<!--
+    <button onclick="offlineProcessing();">
+      Click me to run offline processing
+    </button>
+    <button onclick="grid();">Click me to test Grid</button>
+    -->
+
+		<a class="example_f" href="form/index.html"><span>Rate us</span></a>
+	</section>
+	<footer class="buttom">
+		<label class="txt-buttom">@2020. All rights Reserved</label>
+	</footer>
+
+	<script>
+		window.onload = main();
+	</script>
+</body>
+
+</html>
